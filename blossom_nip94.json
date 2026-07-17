@@ -1,0 +1,30 @@
+{
+  "pubkey": "8b7f13da3ad25e5cf6ef747d53898d798f917b6161a1a181957aa888767aa685",
+  "created_at": 1784258198,
+  "kind": 1063,
+  "tags": [
+    [
+      "url",
+      "http://localhost:8080/759685b7746b377244fa29d0c4d1f2d058cf46155277d3a37625aee9fc1aa882"
+    ],
+    [
+      "m",
+      "application/octet-stream"
+    ],
+    [
+      "x",
+      "759685b7746b377244fa29d0c4d1f2d058cf46155277d3a37625aee9fc1aa882"
+    ],
+    [
+      "size",
+      "64397"
+    ],
+    [
+      "name",
+      "0xdevbot-scripts-v2.bundle"
+    ]
+  ],
+  "content": "0xDevBot tools repo git bundle (42 files, 4 commits)",
+  "id": "a1dceb17627c8884c297f90de24a97608f0c2f96f754fdfaedc0de8e4a15d4bd",
+  "sig": "d5972f181a887c149a88f109fc52515fe3857a61e825cec8ca4814522f421d326a77d5f136c7b067c02fce845b8e80c642afa478e387fb95909d7a673b9a3a29"
+}
