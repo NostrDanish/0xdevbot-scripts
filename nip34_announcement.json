@@ -1,6 +1,6 @@
 {
-  "pubkey": "8b7f13da3ad25e5cf6ef747d53898d798f917b6161a1a181957aa888767aa685a623ac75cde15885b7c4abe8d0b610b687040753a6e80291782e6daea367157e",
-  "created_at": 1784257077,
+  "pubkey": "8b7f13da3ad25e5cf6ef747d53898d798f917b6161a1a181957aa888767aa685",
+  "created_at": 1784257353,
   "kind": 34340,
   "tags": [
     [
@@ -21,6 +21,6 @@
     ]
   ],
   "content": "{\"default_branch\": \"master\", \"relays\": [\"wss://relay.damus.io\", \"wss://nos.lol\", \"wss://relay.primal.net\"], \"topics\": [\"privacy\", \"tools\", \"nostr\", \"static\", \"pwa\"]}",
-  "id": "71719810a7528b7aaac7618b88885020a923a1179b0a314cf8dd6f7de9ce6e37",
-  "sig": "3bf3112be3cff6338e9d4c91de38dd6096a3b578f070db35c9394107f89faf450a8fed8814c8c433b189a0aa8abf361c1f0575232d9fd660a0706e949642707e"
+  "id": "614f96b46992b3ede75c6d0d2f2fc66fba4e88dbc54c2fb5954cde1baa5007ab",
+  "sig": "bf2258b3d2e72b9dc6d721c8840992a27da9e6bc53da9fdb2926b4cc44913509c6ca40cd71a68b400de4dbb29b12f611da09cdc59181a78ebdb27517b0f0546f"
 }
