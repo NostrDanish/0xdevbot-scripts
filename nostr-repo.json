@@ -1,0 +1,11 @@
+{
+  "name": "0xdevbot-scripts",
+  "description": "Privacy-first tools by 0xDevBot",
+  "default_branch": "master",
+  "relays": [
+    "wss://relay.damus.io",
+    "wss://nos.lol",
+    "wss://relay.snort.social",
+    "wss://relay.primal.net"
+  ]
+}
