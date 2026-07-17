@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#0d1117"/>
+<title>0xPrivacy Tools — privacy Swiss Army knife</title>
+<link rel="manifest" href="./manifest.webmanifest"/>
+<link rel="icon" href="./assets/img/icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="./assets/css/shell.css"/>
+<script src="./assets/js/shell.js" defer></script>
+<style>
+.hero{position:relative;text-align:center;padding:48px 20px 32px;overflow:hidden}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,255,159,.12),transparent 60%);pointer-events:none}
+.hero-mark{width:72px;height:72px;filter:drop-shadow(0 0 16px rgba(0,255,159,.5));margin-bottom:8px}
+.hero h1{font-size:2rem;margin:.1em 0 .3em;background:linear-gradient(90deg,#00ff9f,#00ffff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="./index.html">0x<span>Privacy</span> Tools</a>
+  <span class="offline-pill">offline</span>
+  <nav>
+    <a href="./tools/password/index.html">Password</a>
+    <a href="./tools/hash/index.html">Hash</a>
+    <a href="./tools/converters/index.html">Convert</a>
+    <a href="./tools/devutils/index.html">Dev</a>
+    <a href="./tools/qrcode/index.html">QR</a>
+    <a href="./tools/metadata/index.html">Meta</a>
+    <a href="./tools/analytics/index.html">Usage</a>
+    <a href="./tools/nostr/index.html">Nostr</a>
+    <a href="./tools/zk-kyc/index.html">ZK-KYC</a>
+    <a href="./tools/anonsign/index.html">AnonSign</a>
+    <a href="./tools/zk-vote/index.html">ZK-Vote</a>
+    <a href="./tools/zk-cashu/index.html">ZK-Cashu</a>
+    <a href="./tools/zk-attest/index.html">ZK-Attest</a>
+    <a href="./tools/zk-membership-proof/index.html">ZK-Member</a>
+    <button class="btn" data-theme-toggle>theme</button>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" rx="12" fill="#000"/>
+      <path d="M12 28c0-4.4 3.6-8 8-8h4v4h-4c-2.2 0-4 1.8-4 4v8c0 2.2 1.8 4 4 4h4v4h-4c-4.4 0-8-3.6-8-8v-8z" fill="#00ff9f"/>
+      <path d="M52 36c0 4.4-3.6 8-8 8h-4v-4h4c2.2 0 4-1.8 4-4v-8c0-2.2-1.8-4-4-4h-4v-4h4c4.4 0 8 3.6 8 8v8z" fill="#00ffff"/>
+      <line x1="28" y1="26" x2="36" y2="38" stroke="#00ff9f" stroke-width="2" stroke-dasharray="3 2"/>
+    </svg>
+    <h1>Break the Digital Cage.</h1>
+    <p class="muted">0xPrivacy Tools is a privacy Swiss Army knife. Every tool runs <b>client-side</b> — no servers, no accounts, no tracking. Install the PWA and keep using everything offline. Open source under MIT.</p>
+  </section>
+  <input id="q" placeholder="Search tools… (password, hash, bech32, qr…)" style="margin:14px 0"/>
+  <div class="grid" id="grid"></div>
+  <div class="note">All cryptography uses the browser's native WebCrypto + audited <code>@noble/hashes</code>.
+  Nothing you type or upload leaves your device.</div>
+</main>
+<footer>
+  0xPrivacy · privacy is a human right · <a class="link" href="https://github.com/NostrDanish/0xPrivacy-tools">source</a>
+</footer>
+<script>
+const TOOLS = [
+  {t:'Password & Passphrase', d:'Diceware + strong random passwords.', u:'./tools/password/index.html', k:'password diceware passphrase entropy'},
+  {t:'Hash Calculator', d:'SHA-256, BLAKE3, MD5 in-browser.', u:'./tools/hash/index.html', k:'hash sha256 blake3 md5 checksum'},
+  {t:'Converters', d:'Base64, URL, bech32, npub↔hex.', u:'./tools/converters/index.html', k:'base64 url bech32 npub hex nostr convert'},
+  {t:'Dev Utils', d:'JSON format, Unix time, UUID.', u:'./tools/devutils/index.html', k:'json format unix timestamp uuid developer'},
+  {t:'Offline QR', d:'BTC, XMR, Nostr, Wi-Fi QR codes.', u:'./tools/qrcode/index.html', k:'qr qrcode bitcoin monero nostr wifi offline'},
+  {t:'Metadata Cleaner', d:'Strip EXIF / metadata from files.', u:'./tools/metadata/index.html', k:'metadata exif strip image pdf privacy'},
+  {t:'ZK-KYC', d:'Zero-knowledge age/membership proof, client-side.', u:'./tools/zk-kyc/index.html', k:'zk zero knowledge kyc age proof privacy snark'},
+  {t:'AnonSign', d:'Prove key ownership without exposing the key.', u:'./tools/anonsign/index.html', k:'zk anonymous signature schnorr nostr key proof'},
+  {t:'ZK-Vote', d:'Anonymous one-vote-per-key poll.', u:'./tools/zk-vote/index.html', k:'zk vote anonymous poll nostr nullifier democracy'},
+  {t:'ZK-Cashu', d:'Private spend-proof linked to Cashu ecash.', u:'./tools/zk-cashu/index.html', k:'zk cashu ecash spend proof privacy mint nullifier'},
+  {t:'ZK-Attest', d:'Bind NIP-05 to a claim without doxxing.', u:'./tools/zk-attest/index.html', k:'zk attest nip05 claim identity privacy proof'},
+  {t:'ZK-Member', d:'Private group/relay membership proof.', u:'./tools/zk-membership-proof/index.html', k:'zk membership merkle group relay access privacy proof'}
+];
+const grid = document.getElementById('grid'), q = document.getElementById('q');
+function render(list){
+  grid.innerHTML = list.map(x=>`<a class="toolcard" href="${x.u}"><div class="t">${x.t}</div><div class="d">${x.d}</div></a>`).join('') || '<p class="muted">No tools match.</p>';
+}
+render(TOOLS);
+q.addEventListener('input', ()=>{
+  const s = q.value.toLowerCase();
+  render(TOOLS.filter(x=>!s || (x.t+x.d+x.k).toLowerCase().includes(s)));
+});
+</script>
+</body>
+</html>
